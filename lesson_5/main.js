@@ -10,7 +10,7 @@ let start = function () {
 };
 start();
 let income = 'Freelance',
-  addExpenses = ('Перечислите возможные расходы за расчитываемый период через запятую', [0]),
+  addExpenses = prompt('Перечислите возможные расходы за расчитываемый период через запятую', [0]),
   deposit = confirm('Есть ли у вас депозит в банке?'),
   mission = 50000000,
   period = 3;
@@ -24,7 +24,7 @@ let getExpensesMonth = function () {
     do {
       amEx = prompt('Во сколько это обойдется?', []);
     } while (!isNumber(money));
-    sum += amEx;
+    sum += +amEx;
   }
   console.log(expenses);
   return sum;
