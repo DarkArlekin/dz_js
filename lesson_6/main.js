@@ -2,47 +2,6 @@
 let isNumber = function (n) {
   return !isNaN(parseFloat(n)) && isFinite(n);
 };
-
-// function game() {
-//   let x = +prompt('Угадай число от 1 до 100:'),
-//     num = 25,
-//     attempt = 9;
-//   if (!isNumber(x)) {
-//     game();
-//   }
-//   function cycle(x) {
-// if (x === num) {
-//   let play = confirm(`Поздравляю, Вы угадали!!! Хотели бы сыграть еще?`);
-//   if (play == true) {
-//     game();
-//   }
-// } else {
-//   if (x < num && attempt > 0) {
-//     x = +prompt(`Осталось ${attempt} попыток.\nЗагаданное число больше:`);
-//     attempt--;
-//     if (!isNumber(x)) {
-//       cycle(x);
-//     }
-//   }
-//   if (x > num && attempt > 0) {
-//     x = +prompt(`Осталось ${attempt} попыток.\nЗагаданное число меньше:`);
-//     attempt--;
-//     if (!isNumber(x)) {
-//       cycle(x);
-//     }
-//   }
-// }
-// }
-//   return cycle(x);
-// }
-
-// game();
-
-// function game(x) {
-//   // let num=25,
-//   // attempt=9;
-//   console.log(x);
-// }
 let inNum = function () {
   return +prompt('Введите число от 1 до 100:').trim();
 };
