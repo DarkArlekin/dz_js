@@ -9,61 +9,66 @@ let start = function () {
   } while (!isNumber(money));
 };
 start();
-let income = 'Freelance',
-  addExpenses = prompt('Перечислите возможные расходы за расчитываемый период через запятую', [0]),
-  deposit = confirm('Есть ли у вас депозит в банке?'),
-  mission = 50000000,
-  period = 3;
-console.log(addExpenses.toLowerCase().split(','));
-let expenses = [];
-let getExpensesMonth = function () {
-  let sum = 0,
-    amEx = 0;
-  for (let i = 0; i < 2; i++) {
-    expenses[i] = prompt('Введите обязательную статью расходов?', []);
-    do {
-      amEx = prompt('Во сколько это обойдется?', []);
-    } while (!isNumber(money));
-    sum += +amEx;
-  }
-  console.log(expenses);
-  return sum;
-};
-let expensesAmount = getExpensesMonth();
-let getAccumulatedMonth = function () {
-  return money - expensesAmount;
-};
 
-let getTargetMonth = function () {
-  return mission / accumulatedMonth;
-};
-
-let showTypeof = function (item) {
-  console.log(typeof item);
-};
-showTypeof(money);
-showTypeof(income);
-showTypeof(deposit);
-
-let accumulatedMonth = getAccumulatedMonth();
-let butgetDay = accumulatedMonth / 30;
-
-console.log('Расходы за месяц:' + expensesAmount);
-if (getTargetMonth() < 0) {
-  console.log('Цель не будет достигнута!');
-} else {
-  console.log('Цель будет достигнута!');
-}
-if (money >= 1200) {
-  console.log('У вас высокий уровень дохода');
-} else {
-  if (money >= 600) {
-    console.log('У вас средний уровень дохода');
-  } else {
-    if (money > 0) {
-      console.log('К сожалению у вас уровень дохода ниже среднего');
-    } else {
-      console.log('Что то пошло не так');
+let appData = {
+  income: {},
+  addIncome: [],
+  expenses: {},
+  addExpenses: [],
+  deposit: false,
+  mission: 50000,
+  period: 3,
+  budget: money,
+  budgetDay: 0,
+  budgetMonth: 0,
+  expensesMonth: 0,
+  asking: function () {
+    let addExpenses = prompt('Перечислите возможные расходы за расчитываемый период через запятую');
+    appData.addExpenses = addExpenses.toLowerCase().split(',');
+    appData.deposit = confirm('Есть ли у вас депозит в банке?');
+  },
+  getExpensesMonth: function () {
+    for (let i = 0; i < 2; i++) {
+      let a = prompt('Введите обязательную статью расходов?');
+      do {
+        appData.expenses[a] = +prompt('Во сколько это обойдется?');
+      } while (!isNumber(appData.expenses[a]));
     }
-  }
+    for (let value in appData.expenses) {
+      appData.expensesMonth += appData.expenses[value];
+    }
+    console.log(appData.expenses);
+    return appData.expensesMonth;
+  },
+  getBudget: function () {
+    appData.budgetMonth = money-appData.expensesMonth;
+    appData.budgetDay = appData.budgetMonth / 30;
+  },
+  getTargetMonth: function () {
+    return appData.mission / appData.budgetMonth;
+  },
+  getStatusIncome: function () {
+    if (money >= 1200) {
+      return 'У вас высокий уровень дохода';
+    } else {
+      if (money >= 600) {
+        return 'У вас средний уровень дохода';
+      } else {
+        if (money > 0) {
+          return 'К сожалению у вас уровень дохода ниже среднего';
+        } else {
+          return 'Что то пошло не так';
+        }
+      }
+    }
+  },
+};
+appData.asking();
+console.log('Расходы за месяц:' + appData.getExpensesMonth());
+appData.getBudget();
+console.log('Цель  будет достигнута через ' + Math.ceil(appData.getTargetMonth()) + ' месяцев');
+console.log(appData.getStatusIncome());
+console.log('Наша программа включает в себя такие данные:');
+for (const key in appData) {
+  console.log(key + ' : ' + appData[key]);
 }
