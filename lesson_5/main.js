@@ -104,8 +104,9 @@ appData.asking();
 appData.getExpensesMonth();
 appData.getBudget();
 console.log('Расходы за месяц:' + appData.expensesMonth);
-
-console.log('Цель  будет достигнута через ' + Math.ceil(appData.getTargetMonth()) + ' месяцев');
+if(Math.ceil(appData.getTargetMonth())>0){
+console.log('Цель  будет достигнута через ' + Math.ceil(appData.getTargetMonth()) + ' месяцев');} 
+else{console.log('Цель не будет достигнута');}
 console.log(appData.getStatusIncome());
 console.log('Наша программа включает в себя такие данные:');
 for (const key in appData) {
