@@ -15,4 +15,3 @@ week.forEach((element) => {
 });
 
 console.log();
-//document.querySelector('.days').textContent = week;

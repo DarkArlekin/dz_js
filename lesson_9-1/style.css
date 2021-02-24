@@ -1,0 +1,11 @@
+body {
+  font-size: 25px;
+}
+.type_one {
+  color: blueviolet;
+  padding: 15px;
+}
+.type_two {
+  color: brown;
+  padding: 15px;
+}
