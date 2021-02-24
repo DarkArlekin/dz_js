@@ -1,8 +1,9 @@
 body {
   font-size: 25px;
+  font-weight: bold;
 }
 .type_one {
-  color: blueviolet;
+  color: black;
   padding: 15px;
 }
 .type_two {
