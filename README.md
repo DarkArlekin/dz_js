@@ -12,3 +12,4 @@
 - [lesson_6](https://lllena.github.io/dz_js/lesson_6/)
   - [lesson_7-1](https://lllena.github.io/dz_js/lesson_7-1/)
 - [lesson_9](https://lllena.github.io/dz_js/lesson_9/)
+  - [lesson_9-1](https://lllena.github.io/dz_js/lesson_9-1/)
