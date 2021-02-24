@@ -1,6 +1,9 @@
-.today{
-    font-weight: 900;
+.today {
+  font-weight: 900;
 }
-.italic{
-    font-style: italic;
+.italic {
+  font-style: italic;
+}
+li {
+  list-style-type: none;
 }
