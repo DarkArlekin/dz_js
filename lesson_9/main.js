@@ -82,6 +82,7 @@ let appData = {
   },
   addIncomeBlock: function () {
     let cloneIncomeItems = incomeItems[0].cloneNode(true);
+    cloneIncomeItems.querySelector('.income-title').value = ''; // усложненное
     incomeItems[0].parentNode.insertBefore(cloneIncomeItems, incomePlus);
     incomeItems = document.querySelectorAll('.income-items');
     if (incomeItems.length === 3) {
