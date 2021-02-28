@@ -15,3 +15,4 @@
   - [lesson_9-1](https://lllena.github.io/dz_js/lesson_9-1/)
 - [lesson_10](https://lllena.github.io/dz_js/lesson_10/)
   - [lesson_10-1](https://codepen.io/lllena/pen/jOVYBVM/)
+- [lesson_12](https://lllena.github.io/dz_js/lesson_12/)
