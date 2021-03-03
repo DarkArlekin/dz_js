@@ -11,7 +11,7 @@
   - [lesson_5-1](https://lllena.github.io/dz_js/lesson_5-1/)
 - [lesson_6](https://lllena.github.io/dz_js/lesson_6/)
   - [lesson_7-1](https://lllena.github.io/dz_js/lesson_7-1/)
-- [lesson_9, 11, 13](https://lllena.github.io/dz_js/lesson_9/)
+- [lesson_9, 11, 13, 14](https://lllena.github.io/dz_js/lesson_9/)
   - [lesson_9-1](https://lllena.github.io/dz_js/lesson_9-1/)
 - [lesson_10](https://lllena.github.io/dz_js/lesson_10/)
   - [lesson_10-1](https://codepen.io/lllena/pen/jOVYBVM/)
