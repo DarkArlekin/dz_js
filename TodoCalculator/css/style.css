@@ -259,6 +259,9 @@ body {
   justify-content: space-around;
   padding-bottom: 8px;
 }
+.block--3 {
+  align-items: center;
+}
 .text-todo__value {
   padding-top: 10px;
   border: solid 2px #8f009c;
@@ -285,4 +288,147 @@ body {
   height: 40px;
   border-radius: 7px;
   font-size: 17px;
+}
+.todo-input__Days {
+  padding-top: 10px;
+}
+
+@media (max-width: 1220px) {
+  .title {
+    font-size: 16px;
+  }
+  #start {
+    padding: 10px 0;
+  }
+  .todo-input {
+    height: 30px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 1100px) {
+  #start {
+    width: 110px;
+  }
+  .text-todo__value {
+    width: 90px;
+    height: 40px;
+    font-size: 16px;
+  }
+}
+@media (max-width: 1020px) {
+  .block {
+    width: 25%;
+  }
+  .block--3 {
+    width: 80%;
+  }
+  .todo-result {
+    width: 50%;
+  }
+}
+@media (max-width: 880px) {
+  .block {
+    width: 20%;
+  }
+  .block--3 {
+    width: 40%;
+  }
+  .todo-result {
+    width: 20%;
+  }
+  .todo-input {
+    height: 30px;
+    width: 100px;
+  }
+}
+@media (max-width: 680px) {
+  .block {
+    flex-direction: row;
+    width: 100%;
+  }
+  .block--3 {
+    flex-direction: row;
+    align-items: center;
+    margin-left: 39px;
+  }
+  .todo-result {
+    width: 100%;
+    margin-left: 20px;
+  }
+  .todo-calc {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .todo-input {
+    height: 30px;
+    width: 150px;
+  }
+  .text-todo__value {
+    width: 23%;
+    margin-right: -35px;
+  }
+  .todo-calc__items {
+    max-width: 200px;
+    width: 100%;
+  }
+  #start {
+    margin-left: 180px;
+    margin-right: 70px;
+  }
+}
+@media (max-width: 600px) {
+  .text-todo__value {
+    width: 40%;
+  }
+  #start {
+    margin-left: 80px;
+    margin-right: 60px;
+  }
+  .todo-result {
+    width: 80%;
+    margin-left: 0px;
+  }
+  .text-todo__value {
+    margin-right: -130px;
+  }
+}
+@media (max-width: 500px) {
+  .text-todo__value {
+    margin-right: -100px;
+  }
+  #start {
+    margin-left: 50px;
+    margin-right: 30px;
+  }
+}
+@media (max-width: 420px) {
+  #start {
+    margin-left: 40px;
+    margin-right: 10px;
+  }
+  .block {
+    flex-direction: column;
+    width: 100%;
+    margin-left: 70px;
+  }
+  .todo-input {
+    height: 30px;
+    width: 200px;
+  }
+  .block--3 {
+    margin-left: 40px;
+  }
+  .todo-result {
+    flex-direction: column;
+    height: 90px;
+  }
+}
+@media (max-width: 400px) {
+.todo-calc {
+margin-left: -40px;
+}
+  .block--3 {
+    margin-left: 70px;
+  }
 }
