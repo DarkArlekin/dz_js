@@ -59,8 +59,8 @@ class AppData {
 
     this.getExpInc();
     this.getExpensesMonth();
-    this.getAddExpenses();
-    this.getAddIncome();
+    this.getAddExpInc(additionalExpensesItem.value.split(','));
+    this.getAddExpInc(additionalIncomeItem);
     this.getBudget();
     this.getInfoDeposit();
     this.getStatusIncome();
@@ -79,34 +79,22 @@ class AppData {
       incomePeriodValue.value = _this.calcPeriod();
     });
   }
-  addExpensesBlock() {
-    const cloneExpensesItems = expensesItems[0].cloneNode(true);
-    cloneExpensesItems.querySelector(`${'.expenses-title'}`).value = '';
-    cloneExpensesItems.querySelector(`${'.expenses-amount'}`).value = '';
-    expensesItems[0].parentNode.insertBefore(cloneExpensesItems, expensesPlus);
-    expensesItems = document.querySelectorAll('.expenses-items');
 
-    if (expensesItems.length === 3) {
-      expensesPlus.style.display = 'none';
+  addBlock(elem, btn) {
+    let className = elem[0].className.split('-')[0];
+    const cloneItems = elem[0].cloneNode(true);
+    cloneItems.querySelector(`.${className}-title`).value = '';
+    cloneItems.querySelector(`.${className}-amount`).value = '';
+    elem[0].parentNode.insertBefore(cloneItems, btn);
+    elem = document.querySelectorAll(`.${className}-items`);
+
+    if (elem.length === 3) {
+      btn.style.display = 'none';
     }
   }
-
-  addIncomeBlock() {
-    const cloneIncomeItems = incomeItems[0].cloneNode(true);
-    cloneIncomeItems.querySelector(`${'.income-title'}`).value = '';
-    cloneIncomeItems.querySelector(`${'.income-amount'}`).value = '';
-    incomeItems[0].parentNode.insertBefore(cloneIncomeItems, incomePlus);
-    incomeItems = document.querySelectorAll('.income-items');
-
-    if (incomeItems.length === 3) {
-      incomePlus.style.display = 'none';
-    }
-  }
-
   getExpInc() {
     const count = (item) => {
       const startStr = item.className.split('-')[0];
-      console.log(startStr);
       const itemTitle = item.querySelector(`.${startStr}-title`).value;
       const itemAmount = item.querySelector(`.${startStr}-amount`).value;
       if (itemTitle !== '' && itemAmount !== '') {
@@ -119,27 +107,22 @@ class AppData {
       this.incomeMonth += +this.income[key];
     }
   }
-  getAddExpenses() {
-    const addExpenses = additionalExpensesItem.value.split(',');
-    const _this = this;
-    addExpenses.forEach(function (item) {
-      item = item.trim();
-      item = item.charAt(0).toUpperCase() + item.substring(1).toLowerCase();
+  getAddExpInc(incExp) {
+    incExp.forEach((item) => {
       if (item !== '') {
-        _this.addExpenses.push(item);
+        if (incExp === additionalIncomeItem) {
+          let itemValue = item.value.trim();
+          itemValue = itemValue.charAt(0).toUpperCase() + itemValue.substring(1).toLowerCase();
+          this.addIncome.push(itemValue);
+          return;
+        }
+        let itemValue = item.trim();
+        itemValue = itemValue.charAt(0).toUpperCase() + itemValue.substring(1).toLowerCase();
+        this.addExpenses.push(itemValue);
       }
     });
   }
-  getAddIncome() {
-    const _this = this;
-    additionalIncomeItem.forEach(function (item) {
-      let itemValue = item.value.trim();
-      itemValue = itemValue.charAt(0).toUpperCase() + itemValue.substring(1).toLowerCase();
-      if (itemValue !== '') {
-        _this.addIncome.push(itemValue);
-      }
-    });
-  }
+
   getExpensesMonth() {
     for (let key in this.expenses) {
       this.expensesMonth += +this.expenses[key];
@@ -220,8 +203,8 @@ class AppData {
   }
   eventListeners = function (obj) {
     start.addEventListener('click', this.start.bind(obj));
-    expensesPlus.addEventListener('click', this.addExpensesBlock);
-    incomePlus.addEventListener('click', this.addIncomeBlock);
+    expensesPlus.addEventListener('click', () => this.addBlock(expensesItems, expensesPlus));
+    incomePlus.addEventListener('click', () => this.addBlock(incomeItems, incomePlus));
     salaryAmount.addEventListener('keyup', this.check);
     cancel.addEventListener('click', this.reset.bind(obj));
 
