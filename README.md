@@ -23,6 +23,6 @@
   - [lesson_17-1](https://lllena.github.io/dz_js/lesson_17-1/)
   - [lesson_17-2](https://lllena.github.io/dz_js/lesson_17-2/)
   - [lesson_17-3](https://lllena.github.io/dz_js/lesson_17-3/)
-- [lesson_18](https://lllena.github.io/dz_js/lesson_18/)
+- [3D Glo](https://lllena.github.io/dz_js/lesson_18/)
   - [lesson_18-1](https://lllena.github.io/dz_js/lesson_18-1/)
   - [lesson_18-2](https://lllena.github.io/dz_js/lesson_18_addit_2/)
