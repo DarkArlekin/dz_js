@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.main {
+  position: relative;
+  background-image: url(img/fon.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 660px;
+  display: flex;
+}
+.img {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+}
+.button {
+  height: 40px;
+  width: 80px;
+  position: absolute;
+  top: 550px;
+  left: 40%;
+}
+.reset {
+  left: 50%;
+}

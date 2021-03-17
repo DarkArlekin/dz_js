@@ -25,3 +25,4 @@
   - [lesson_17-3](https://lllena.github.io/dz_js/lesson_17-3/)
 - [lesson_18](https://lllena.github.io/dz_js/lesson_18/)
   - [lesson_18-1](https://lllena.github.io/dz_js/lesson_18-1/)
+  - [lesson_18-2](https://lllena.github.io/dz_js/lesson_18-2_addit_2/)
