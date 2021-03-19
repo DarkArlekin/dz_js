@@ -53,13 +53,12 @@ class Todo {
   }
   deleteItem() {}
   completedItem(key) {
-    console.log(key);
   }
   editItem() {}
   handler() {
     let main = document.querySelector('.todo-container');
     main.addEventListener('click', ({ target }) => {
-      key = target.closest('.todo-item')?.getAttributes('data-id');
+      let key = target.closest('.todo-item').getAttribute('data-id');
       console.log(target.classList.value);
       if (target.classList.value === 'todo-complete') {
         this.completedItem(key);
