@@ -58,7 +58,7 @@ class Todo {
   handler() {
     let main = document.querySelector('.todo-container');
     main.addEventListener('click', ({ target }) => {
-      let key = target.closest('.todo-item').getAttribute('data-id');
+      const key = target.closest('.todo-item')?.getAttribute('data-id');
       console.log(target.classList.value);
       if (target.classList.value === 'todo-complete') {
         this.completedItem(key);
