@@ -19,6 +19,7 @@ class Todo {
   }
   createItem = (todo) => {
     const li = document.createElement('li');
+    li.setAttribute('data-id', todo.key);
     li.classList.add('todo-item');
     li.insertAdjacentHTML(
       'beforeend',
@@ -52,14 +53,13 @@ class Todo {
   }
   deleteItem() {}
   completedItem(key) {
-    console.dir(key);
+    console.log(key);
   }
   editItem() {}
   handler() {
     let main = document.querySelector('.todo-container');
-    main.addEventListener('click', (event) => {
-      let target = event.target,
-        key = target.closest('.todo-item');
+    main.addEventListener('click', ({ target }) => {
+      key = target.closest('.todo-item')?.getAttributes('data-id');
       console.log(target.classList.value);
       if (target.classList.value === 'todo-complete') {
         this.completedItem(key);
